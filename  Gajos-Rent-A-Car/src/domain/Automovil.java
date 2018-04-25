@@ -9,12 +9,13 @@ package domain;
  *
  * @author CASA
  */
-public class Automóvil {
+public class Automovil {
     private String modelo;
     private String marca;
     private String motor;
     private String transmisión;
     private String frenos;
+    
 
     public String getModelo() {
         return modelo;
@@ -55,6 +56,8 @@ public class Automóvil {
     public void setFrenos(String frenos) {
         this.frenos = frenos;
     }
-    
-    
+        
+    public String getName() {
+    return this.marca + this.modelo;
+    }
 }

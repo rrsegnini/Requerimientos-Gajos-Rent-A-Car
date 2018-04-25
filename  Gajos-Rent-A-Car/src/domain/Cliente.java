@@ -15,9 +15,9 @@ public class Cliente extends Usuario{
     private String dirección;
     private int teléfono;
     private String correo;
-    private Automóvil auto_alquilado;
+    private Automovil auto_alquilado;
 
-    public Cliente(String nombre, String cédula, String dirección, int teléfono, String correo, Automóvil auto_alquilado) {
+    public Cliente(String nombre, String cédula, String dirección, int teléfono, String correo, Automovil auto_alquilado) {
         this.nombre = nombre;
         this.cédula = cédula;
         this.dirección = dirección;
@@ -68,11 +68,11 @@ public class Cliente extends Usuario{
         this.correo = correo;
     }
 
-    public Automóvil getAuto_alquilado() {
+    public Automovil getAuto_alquilado() {
         return auto_alquilado;
     }
 
-    public void setAuto_alquilado(Automóvil auto_alquilado) {
+    public void setAuto_alquilado(Automovil auto_alquilado) {
         this.auto_alquilado = auto_alquilado;
     }
     

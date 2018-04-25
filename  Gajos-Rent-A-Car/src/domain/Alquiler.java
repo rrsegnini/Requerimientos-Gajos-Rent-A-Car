@@ -16,9 +16,9 @@ public class Alquiler {
     private Cliente cliente;
     private Factura factura;
     private Cajero cajero;
-    private Automóvil automóvil;
+    private Automovil automóvil;
 
-    public Alquiler(Cliente cliente, Cajero cajero, Automóvil automóvil) {
+    public Alquiler(Cliente cliente, Cajero cajero, Automovil automóvil) {
         this.cliente = cliente;
         this.cajero = cajero;
         this.automóvil = automóvil;
@@ -57,11 +57,11 @@ public class Alquiler {
         this.cajero = cajero;
     }
 
-    public Automóvil getAutomóvil() {
+    public Automovil getAutomóvil() {
         return automóvil;
     }
 
-    public void setAutomóvil(Automóvil automóvil) {
+    public void setAutomóvil(Automovil automóvil) {
         this.automóvil = automóvil;
     }
     
