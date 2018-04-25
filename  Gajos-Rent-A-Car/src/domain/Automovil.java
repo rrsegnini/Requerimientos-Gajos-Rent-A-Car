@@ -9,12 +9,10 @@ package domain;
  *
  * @author CASA
  */
-<<<<<<< HEAD: Gajos-Rent-A-Car/src/domain/Automovil.java
+
 public class Automovil {
-=======
 public class Automóvil {
     private String placa;
->>>>>>> origin/master: Gajos-Rent-A-Car/src/domain/Automóvil.java
     private String modelo;
     private String marca;
     private String motor;
@@ -80,6 +78,8 @@ public class Automóvil {
     }
         
     public String getName() {
-    return this.marca + this.modelo;
+        return this.marca + this.modelo + this.placa;
     }
 }
+}
+
