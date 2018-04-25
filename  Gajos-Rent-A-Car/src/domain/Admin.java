@@ -6,6 +6,7 @@
 package domain;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  *
@@ -15,6 +16,8 @@ public class Admin {
     private String nombre;
     private Date fecha_creación;
 
+    
+    
     public String getNombre() {
         return nombre;
     }

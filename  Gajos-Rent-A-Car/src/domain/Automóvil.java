@@ -10,12 +10,30 @@ package domain;
  * @author CASA
  */
 public class Automóvil {
+    private String placa;
     private String modelo;
     private String marca;
     private String motor;
     private String transmisión;
     private String frenos;
 
+    public Automóvil(String placa, String modelo, String marca, String transmisión) {
+        this.placa = placa;
+        this.modelo = modelo;
+        this.marca = marca;
+        this.transmisión = transmisión;
+    }
+
+       
+    public String getPlaca() {
+        return placa;
+    }
+
+    public void setPlaca(String placa) {
+        this.placa = placa;
+    }
+    
+    
     public String getModelo() {
         return modelo;
     }
