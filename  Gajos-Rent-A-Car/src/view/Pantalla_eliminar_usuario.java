@@ -33,8 +33,6 @@ public class Pantalla_eliminar_usuario extends javax.swing.JDialog {
         jScrollPane1 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList<>();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-
         jLabel1.setText("Eliminar usuario");
 
         jButton1.setText("Eliminar usuario");

@@ -10,21 +10,22 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
+
 /**
  *
  * @author CASA
  */
-public class Pantalla_alquiler extends javax.swing.JFrame {
+public class Pantalla_alquiler_carro extends javax.swing.JDialog {
 
     /**
-     * Creates new form Pantalla_alquiler
+     * Creates new form Pantalla_alquiler_carro
      */
     List<Automovil> carsList = new ArrayList<Automovil>();
-    public Pantalla_alquiler() {
+    public Pantalla_alquiler_carro(java.awt.Frame parent, boolean modal) {
+        super(parent, modal);
         initComponents();
         carsList = DB.Data.getInstance().getVehicle_List();
         this.automovilesComboBox.setModel(new DefaultComboBoxModel(carsList.toArray()));
-        
     }
 
     /**
@@ -36,9 +37,13 @@ public class Pantalla_alquiler extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        correoTextField = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        automovilesComboBox = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -46,18 +51,25 @@ public class Pantalla_alquiler extends javax.swing.JFrame {
         cedulaTextField = new javax.swing.JTextField();
         dirTextField = new javax.swing.JTextField();
         telTextField = new javax.swing.JTextField();
-        correoTextField = new javax.swing.JTextField();
-        jLabel13 = new javax.swing.JLabel();
-        automovilesComboBox = new javax.swing.JComboBox<>();
-        jButton1 = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setText("Cliente");
 
+        jLabel13.setText("Automoviles ");
+
         jLabel2.setText("Nombre:");
 
+        automovilesComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
         jLabel3.setText("Cedula:");
+
+        jButton1.setText("Alquilar ");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
 
         jLabel4.setText("Direccion:");
 
@@ -77,23 +89,12 @@ public class Pantalla_alquiler extends javax.swing.JFrame {
             }
         });
 
-        jLabel13.setText("Automoviles ");
-
-        automovilesComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        jButton1.setText("Alquilar ");
-        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton1MouseClicked(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(13, 13, 13)
+                .addGap(35, 35, 35)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jButton1)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -110,8 +111,8 @@ public class Pantalla_alquiler extends javax.swing.JFrame {
                                     .addComponent(jLabel1)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(nameTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 78, Short.MAX_VALUE)
-                                .addComponent(cedulaTextField, javax.swing.GroupLayout.Alignment.TRAILING))
+                                .addComponent(nameTextField)
+                                .addComponent(cedulaTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(jLabel13)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -125,13 +126,13 @@ public class Pantalla_alquiler extends javax.swing.JFrame {
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(telTextField, javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addComponent(dirTextField)
-                                .addComponent(correoTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)))))
-                .addContainerGap(20, Short.MAX_VALUE))
+                                .addComponent(correoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(298, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(12, 12, 12)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(64, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(jLabel13)
@@ -158,28 +159,21 @@ public class Pantalla_alquiler extends javax.swing.JFrame {
                     .addComponent(correoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton1)
-                .addContainerGap(9, Short.MAX_VALUE))
+                .addGap(49, 49, 49))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void nameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_nameTextFieldActionPerformed
-
-    private void cedulaTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cedulaTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cedulaTextFieldActionPerformed
-
+   
     private Automovil getAuto(String _name) {
         for (int i = 0; i < this.carsList.size();i++) {
             Automovil car = this.carsList.get(i);
-            if (_name.equals(car))
+            if (_name.equals(car.getName()))
                 return car;
         }
         return null;
     }
+    
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         // TODO add your handling code here:
         //Obtener todos los datos de los text fields
@@ -191,22 +185,25 @@ public class Pantalla_alquiler extends javax.swing.JFrame {
         correo = this.correoTextField.getText();
         int telefono = Integer.getInteger(telStr);
         name = this.automovilesComboBox.getSelectedItem().toString();
-        
-       
+
         try {
             Automovil auto_alquilado = getAuto(name);
             domain.Cliente client = new domain.Cliente(nombre, cedula, dir, telefono, correo, auto_alquilado);
             JOptionPane.showMessageDialog(null, "Automovil alquilado!", "Mensaje", JOptionPane.INFORMATION_MESSAGE);
         }catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Error", "Mensaje", JOptionPane.WARNING_MESSAGE);
-            
+
         }
-        
-        
-        
-        
 
     }//GEN-LAST:event_jButton1MouseClicked
+
+    private void nameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nameTextFieldActionPerformed
+
+    private void cedulaTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cedulaTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cedulaTextFieldActionPerformed
 
     /**
      * @param args the command line arguments
@@ -225,20 +222,27 @@ public class Pantalla_alquiler extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Pantalla_alquiler.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Pantalla_alquiler_carro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Pantalla_alquiler.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Pantalla_alquiler_carro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Pantalla_alquiler.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Pantalla_alquiler_carro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Pantalla_alquiler.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Pantalla_alquiler_carro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
-        /* Create and display the form */
+        /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Pantalla_alquiler().setVisible(true);
+                Pantalla_alquiler_carro dialog = new Pantalla_alquiler_carro(new javax.swing.JFrame(), true);
+                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
+                    @Override
+                    public void windowClosing(java.awt.event.WindowEvent e) {
+                        System.exit(0);
+                    }
+                });
+                dialog.setVisible(true);
             }
         });
     }

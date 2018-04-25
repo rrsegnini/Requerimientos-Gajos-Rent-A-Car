@@ -11,7 +11,6 @@ package domain;
  */
 
 public class Automovil {
-public class Automóvil {
     private String placa;
     private String modelo;
     private String marca;
@@ -20,7 +19,7 @@ public class Automóvil {
     private String frenos;
     
 
-    public Automóvil(String placa, String modelo, String marca, String transmisión) {
+    public Automovil(String placa, String modelo, String marca, String transmisión) {
         this.placa = placa;
         this.modelo = modelo;
         this.marca = marca;
@@ -80,6 +79,11 @@ public class Automóvil {
     public String getName() {
         return this.marca + this.modelo + this.placa;
     }
-}
+    
+    @Override
+    public String toString(){
+        return marca + " " + modelo + " " + placa; 
+    }
+
 }
 

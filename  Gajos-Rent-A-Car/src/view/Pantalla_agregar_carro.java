@@ -118,8 +118,8 @@ public class Pantalla_agregar_carro extends javax.swing.JDialog {
 
     private void agregar_carroBTNMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_agregar_carroBTNMouseClicked
         DB.Data.getInstance().getVehicle_List()
-                .add(new domain.Automóvil(placaTxt.getText(),modeloTxt.getText(),
-                transTxt.getText(), marcasTxt.getText()));
+                .add(new domain.Automovil(placaTxt.getText(),modeloTxt.getText(),
+                marcasTxt.getText(),transTxt.getText()));
        
         System.out.println(DB.Data.getInstance().getVehicle_List().toString());
         placaTxt.setText("");

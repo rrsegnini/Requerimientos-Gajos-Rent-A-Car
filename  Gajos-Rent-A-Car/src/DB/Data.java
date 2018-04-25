@@ -5,7 +5,7 @@
  */
 package DB;
 
-import domain.Automóvil;
+import domain.Automovil;
 import domain.Usuario;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,9 +16,9 @@ import java.util.List;
  */
 public class Data {
     private static Data data_instance = new Data();
-    private List<Automóvil> Vehicle_List = new ArrayList<Automóvil>();
+    private List<Automovil> Vehicle_List = new ArrayList<Automovil>();
     private List<Usuario> User_List = new ArrayList<Usuario>();
-
+    
     public static Data getData_instance() {
         return data_instance;
     }
@@ -37,6 +37,10 @@ public class Data {
     
 
     public Data() {
+        Vehicle_List.add(new Automovil("865845","2018", "Nissan Tiida", "Manual"));
+        Vehicle_List.add(new Automovil("6521457","1995", "Toyota Corolla", "Manual"));
+        Vehicle_List.add(new Automovil("2365496","2015", "Hyundai Tucson", "Automático"));
+        
     }
     
     public static Data getInstance(){
@@ -49,11 +53,11 @@ public class Data {
     }
     
     
-    public List<Automóvil> getVehicle_List() {
+    public List<Automovil> getVehicle_List() {
         return Vehicle_List;
     }
 
-    public void setVehicle_List(List<Automóvil> Vehicle_List) {
+    public void setVehicle_List(List<Automovil> Vehicle_List) {
         this.Vehicle_List = Vehicle_List;
     }
     
